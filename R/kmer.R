@@ -109,16 +109,7 @@ kmer.frac.bootstrap <- function(n, r=2, mt=20, times=30, conf=0.95) {
 #'     high-throughput sequencing experiment given the amount of
 #'     sequencing. But this function does it with bootstrapping.
 #'
-#' @param n A two-column matrix. The first column is the frequency j
-#'     = 1,2,...; and the second column is N_j, the number of k-mers
-#'     observed exactly j times in the initial experiment. The first
-#'     column must be sorted in an ascending order.
-#' @param k The number of nucleotides in a k-mer.
-#' @param read.len The average length of a read.
-#' @param seq The amount of nucleotides sequenced.
-#' @param r A positive integer. Default is 1.
-#' @param mt An positive integer constraining possible rational
-#'     function approximations. Default is 20.
+#' @inheritParams kmer.frac.curve
 #' @param times The number of bootstrap samples.
 #' @param conf The confidence level. Default is 0.95
 #'
@@ -138,16 +129,7 @@ kmer.frac.bootstrap <- function(n, r=2, mt=20, times=30, conf=0.95) {
 #'     The confidence interval is constructed based on a lognormal
 #'     distribution.
 #'
-#' @author Chao Deng \email{chaodeng@usc.edu}
-#'
-#' @references
-#'     Efron, B., & Tibshirani, R. J. (1994). An introduction to the
-#'     bootstrap. CRC press.
-#'
-#'     Deng C, Daley T, Calabrese P, Ren J & Smith AD (2020).
-#'     Predicting the Number of Bases to Attain Sufficient Coverage in
-#'     High-Throughput Sequencing Experiments. Journal of
-#'     Computational Biology, 27(7), 1130-1143
+#' @inherit kmer.frac.curve author references
 #'
 #' @examples
 #' # load library
